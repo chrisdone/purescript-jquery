@@ -64,10 +64,10 @@ import Data.Functor (map)
 import Data.Maybe (Maybe(..))
 
 -- | The type of collections of jQuery-wrapped nodes.
-foreign import data JQuery :: Type
+foreign import data JQuery :: *
 
 -- | Type of jQuery event objects.
-foreign import data JQueryEvent :: Type
+foreign import data JQueryEvent :: *
 
 -- | A type synonym to help readability of type signatures.
 type Selector = String
@@ -125,7 +125,7 @@ foreign import getAttrImpl
   -> Eff (dom :: DOM | eff) Foreign
 
 -- | Get an attribute value.
-getAttr 
+getAttr
   :: forall eff
    . String
    -> JQuery
